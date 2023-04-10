@@ -1,6 +1,6 @@
-﻿@model List<laboratorio3.Models.MovieModel>;
+﻿@model List<laboratorio3.Models.SongModel>;
 @{
-    ViewData["Title"] = "Movies";
+    ViewData["Title"] = "Songs";
 }
 <h1>@ViewBag.MainTitle</h1>
 <div>
@@ -13,8 +13,11 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Genre</td>
+                    <td>@item.SongName</td>
+                    <td>@item.SongGenre</td>
+                    <td>@item.Album</td>
+                    <td>@item.Artist</td>
+                    <td>@item.ProducedBy</td>
                     <td>@item.ReleaseDate</td>
                 </tr>
             }
@@ -22,5 +25,5 @@
     </table>
 </div>
 <div>
-    <button>I am a button</button>
+    <button>Hola:)</button>
 </div>
