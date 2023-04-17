@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    min-height: 3000px;
+    padding-top: 80px;
+}
+
+.container {
+    max-width: 100%;
+    margin: auto;
+    padding: 0 16px;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+header {
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+header .logo {
+    display: inline-block;
+    font-size: 27px;
+}
+
+
+header .logo .blue-dot {
+    background-color: #3e50e5;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    border-radius: 10px;
+}
+
+header nav {
+    display: inline-block;
+    float: right;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+
+}
+
+header nav ul li a {
+    color: #3e3e3e;
+    font-size: 15px;
+    letter-spacing: 0.37px;
+    margin-right: 24px;
+    text-decoration: none;
+}
+
+header nav ul li:last-of-type a {
+    margin-right: 0;
+}
+
+.hero img {
+    max-width: 100%;
+    height: auto; /* por si acaso */
+}
+
+
