@@ -1,0 +1,29 @@
+﻿@model List<Lab5.Models.peliculaModelo>;
+
+@{
+    ViewData["Title"] = "Peliculas";
+}
+
+
+<h1><@ViewBag</h1>
+
+<div>
+    <table class="Table">
+        <thread>
+            <tr>
+                <th>Titulo de la pelicula</th>
+                <th>Anno de salida</th>
+            </tr>
+        </thread>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Nombre</td>
+                    <td>@item.Anno</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
