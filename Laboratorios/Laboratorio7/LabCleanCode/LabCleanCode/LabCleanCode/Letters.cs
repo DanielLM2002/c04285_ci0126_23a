@@ -10,10 +10,10 @@ namespace LabCleanCode
             string strCaptured = Console.ReadLine();
             char[] sentence = strCaptured.ToCharArray();
 
-            int i, vowels = 0, consonants = 0, special = 0;
 
-            for (i = 0; i< sentence.Length; i++)
+            for (int i = 0; i< sentence.Length; i++)
             {
+                int vowels = 0, consonants = 0, special = 0;
                 if ((sentence[i] == 'a' || sentence[i] == 'e' || sentence[i] ==
                 'i' || sentence[i] == 'o' || sentence[i] == 'u') ||
                 (sentence[i] == 'A' || sentence[i] == 'E' || sentence[i] ==

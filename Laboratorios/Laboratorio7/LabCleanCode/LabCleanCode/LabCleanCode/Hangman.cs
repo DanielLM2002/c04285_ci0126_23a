@@ -23,8 +23,9 @@ namespace LabCleanCode
             char[] guess = new char[mysteryWord.Length];
             Console.Write("Please enter your guess: ");
 
+            char magicString = '*'
             for (int p = 0; p < mysteryWord.Length; p++)
-                guess[p] = '*';
+                guess[p] = magicString;
 
 
             while (true)

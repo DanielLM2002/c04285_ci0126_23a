@@ -15,7 +15,9 @@ namespace LabCleanCode
                     Console.Write("Enter a number between 1 and 100(0 to quit):");
                     int input = Convert.ToInt32(Console.ReadLine());
                     if (input == 0)
+                    {
                         return;
+                    }
                     else if (input < randno)
                     {
                         Console.WriteLine("Low, try again.");

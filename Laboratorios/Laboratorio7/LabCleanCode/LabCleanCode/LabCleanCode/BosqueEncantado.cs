@@ -14,13 +14,13 @@
             cantidadFilas = pfilas;
             cantidadColumnas = pcolumnas;
             matrizBosque = new int[cantidadFilas, cantidadColumnas];
-            double doubleAleatorio;
+            double double_aleatorio;
             int int_decision;
             for (int f = 0; f < cantidadFilas; ++f)
             {
                 for (int c = 0; c < cantidadColumnas; ++c)
                 {
-                    doubleAleatorio = (Math.random() * 3) + 1;
+                    double_aleatorio = (Math.random() * 3) + 1;
                     int_decision = (int)numeroAleatorio;
                     if (int_desicion == 1)
                     {
@@ -37,7 +37,7 @@
                     }
                     if (int_decision != 3 && int_decision != 2 && int_decision != 1)
                     {
-                        doubleAleatorio = (Math.random() * 3) + 1;
+                        double_aleatorio = (Math.random() * 3) + 1;
                     }
                 }
             }
