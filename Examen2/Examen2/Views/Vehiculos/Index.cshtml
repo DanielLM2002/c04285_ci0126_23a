@@ -9,10 +9,13 @@
             <tr>
                 <th>Nombre del vehiculo</th>
                 <th>Tipo de vehiculo</th>
+                <th>Popularidad</th>
+                <th>Precio de unidad (dolares)</th>
+                <th>Requerieminto de licencia</th>
             </tr>
         </thread>
         <tbody>
-            @foreach(var item in Model)
+            @foreach (var item in Model)
             {
                 <tr>
                     <td>@item.Nombre</td>
@@ -24,4 +27,26 @@
             }
         </tbody>
     </table>
+    <button onclick="showForm()">Mostrar formulario</button>
+    <div id="formDiv" style="display:none">
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo">
+            <label for="popularidad">Popularidad:</label>
+            <input type="number" id="popularidad" name="popularidad">
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio">
+            <label for="licencia">Requerimiento de licencia:</label>
+            <input type="checkbox" id="licencia" name="licencia" value="true">
+        </form>
+    </div>
 </div>
+
+<script>
+    function showForm() {
+        document.getElementById("formDiv").style.display = "block";
+    }
+</script>
+

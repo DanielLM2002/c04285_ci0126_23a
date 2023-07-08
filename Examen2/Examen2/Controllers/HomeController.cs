@@ -28,5 +28,12 @@ namespace Examen2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public ActionResult CrearVehiculo() {
+
+
+
+            return View();
+        }
     }
 }

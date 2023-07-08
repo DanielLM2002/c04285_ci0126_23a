@@ -29,6 +29,18 @@ namespace Examen2.Handlers
             conexion.Close();
             return consultaFormatoTabla;
         }
+
+        public bool CrearVehiculo(VehiculosModel vehiculo)
+        {
+            var consultaCreaccion = $@"INSERT INTO [dbo].[Vehiculo] (Nombre, Tipo, Popularidad, Precio, NecesitaLicencia) VALUES ('{vehiculo.Nombre}', '{vehiculo.Tipo}', '{vehiculo.Popularidad}', '{vehiculo.Precio}', '{vehiculo.NecesitaLicencia}')";
+            SqlCommand comandoParaCreacion = new SqlCommand(consultaCreaccion, conexion);
+            conexion.Open();
+            int resultado = comandoParaCreacion.ExecuteNonQuery();
+            conexion.Close();
+            return resultado > 0;
+        }
+
+
         public List<VehiculosModel> ObtenerVehiculos()
         {
             List<VehiculosModel> vehiculos = new List<VehiculosModel>();
@@ -45,7 +57,8 @@ namespace Examen2.Handlers
                     Nombre = Convert.ToString(columna["Nombre"]),
                     Tipo = Convert.ToString(columna["Tipo"]),
                     Popularidad = Convert.ToString(columna["Popularidad"]),
-                    Precio = Convert.ToInt32(columna["Precio"]),
+                    //Precio = Convert.ToString(columna["Precio"]),
+                    Precio = (float)decimal.Parse(columna["Precio"].ToString()),
                     NecesitaLicencia = Convert.ToBoolean(columna["NecesitaLicencia"]),
 
                 });
