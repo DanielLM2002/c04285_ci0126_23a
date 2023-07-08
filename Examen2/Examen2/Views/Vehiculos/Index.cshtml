@@ -1,29 +1,27 @@
 ﻿@model List<Examen2.Models.VehiculosModel>;
 @{
-    ViewData["Title"] = "Movies";
+    ViewData["Title"] = "Vehiculos";
 }
 <h1>@ViewBag.MainTitle</h1>
 <div>
     <table class="table">
-        <thead>
+        <thread>
             <tr>
+                <th>Nombre del vehiculo</th>
+                <th>Tipo de vehiculo</th>
             </tr>
-        </thead>
+        </thread>
         <tbody>
-            @foreach (var item in Model)
+            @foreach(var item in Model)
             {
                 <tr>
                     <td>@item.Nombre</td>
-                    <td>@item.Popularidad</td>
                     <td>@item.Tipo</td>
+                    <td>@item.Popularidad</td>
                     <td>@item.Precio</td>
                     <td>@item.NecesitaLicencia</td>
-
                 </tr>
             }
         </tbody>
     </table>
-</div>
-<div>
-    <button>I am a button</button>
 </div>
