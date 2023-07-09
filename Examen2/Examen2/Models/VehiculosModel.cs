@@ -27,5 +27,10 @@ namespace Examen2.Models
         [DisplayName("Requerimiento de licencia")]
         public bool NecesitaLicencia { get; set; }
 
+
+        [Required(ErrorMessage = "Debe de ingresar un ID valido")]
+        [DisplayName("Id del vehiculo")]
+        [RegularExpression("^[a-zA-Z0-9]+$", ErrorMessage = "Ingrese un ID valido")]
+        public int ID { get; set; }
     }
 }

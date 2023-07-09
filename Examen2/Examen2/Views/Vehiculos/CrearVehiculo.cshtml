@@ -32,6 +32,27 @@
                 @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
 
            </div>
+           <div class="from-group">
+                 @Html.LabelFor(model => model.Popularidad)
+                 @Html.TextBoxFor(model => model.Popularidad, new { @class = "form-control" })
+                 @Html.ValidationMessageFor(model => model.Popularidad, "", new { @class = "text-danger" })
+           </div>
+            <div class="from-group">
+                  @Html.LabelFor(model => model.Precio)
+                  @Html.TextBoxFor(model => model.Precio, new { @class = "form-control" })
+                  @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.NecesitaLicencia)
+                @Html.CheckBoxFor(model => model.NecesitaLicencia, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NecesitaLicencia, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID)
+                @Html.TextBoxFor(model => model.ID, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
+            </div>  
+
            <input type="submit" class="btn btn-success" value="Crear">
        </div>
     }

@@ -32,7 +32,7 @@ namespace Examen2.Handlers
 
         public bool EditarVehiculo(VehiculosModel vehiculo)
         {
-            var consultaActualizacion = $@"UPDATE [dbo].[Vehiculo] SET ID='vehiculo.ID', Nombre='{vehiculo.Nombre}', Tipo='{vehiculo.Tipo}', Popularidad='{vehiculo.Popularidad}', Precio='{vehiculo.Precio}', NecesitaLicencia='{vehiculo.NecesitaLicencia}' WHERE id='{vehiculo.Id}'";
+            var consultaActualizacion = $@"UPDATE [dbo].[Vehiculo] SET Nombre='{vehiculo.Nombre}', Tipo='{vehiculo.Tipo}', Popularidad='{vehiculo.Popularidad}', Precio='{vehiculo.Precio}', NecesitaLicencia='{vehiculo.NecesitaLicencia}' WHERE ID='{vehiculo.ID}'";
             SqlCommand comandoParaActualizacion = new SqlCommand(consultaActualizacion, conexion);
             conexion.Open();
             int resultado = comandoParaActualizacion.ExecuteNonQuery();
@@ -41,10 +41,21 @@ namespace Examen2.Handlers
         }
         public bool CrearVehiculo(VehiculosModel vehiculo)
         {
-            var consultaCreaccion = $@"INSERT INTO [dbo].[Vehiculo] (Nombre, Tipo, Popularidad, Precio, NecesitaLicencia) VALUES ('{vehiculo.Nombre}', '{vehiculo.Tipo}', '{vehiculo.Popularidad}', '{vehiculo.Precio}', '{vehiculo.NecesitaLicencia}')";
+            var consultaCreaccion = $@"INSERT INTO [dbo].[Vehiculo] (ID, Nombre, Tipo, Popularidad, Precio, NecesitaLicencia) 
+                                       VALUES ('{vehiculo.ID}', '{vehiculo.Nombre}', '{vehiculo.Tipo}', '{vehiculo.Popularidad}', '{vehiculo.Precio}', '{vehiculo.NecesitaLicencia}')";
             SqlCommand comandoParaCreacion = new SqlCommand(consultaCreaccion, conexion);
             conexion.Open();
             int resultado = comandoParaCreacion.ExecuteNonQuery();
+            conexion.Close();
+            return resultado > 0;
+        }
+
+        public bool EliminarVehiculo(int id)
+        {
+            var consultaEliminacion = $@"DELETE FROM [dbo].[Vehiculo] WHERE ID='{id}'";
+            SqlCommand comandoParaEliminacion = new SqlCommand(consultaEliminacion, conexion);
+            conexion.Open();
+            int resultado = comandoParaEliminacion.ExecuteNonQuery();
             conexion.Close();
             return resultado > 0;
         }
