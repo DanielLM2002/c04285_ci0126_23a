@@ -32,7 +32,7 @@ namespace Examen2.Handlers
 
         public bool EditarVehiculo(VehiculosModel vehiculo)
         {
-            var consultaActualizacion = $@"UPDATE [dbo].[Vehiculo] SET Nombre='{vehiculo.Nombre}', Tipo='{vehiculo.Tipo}', Popularidad='{vehiculo.Popularidad}', Precio='{vehiculo.Precio}', NecesitaLicencia='{vehiculo.NecesitaLicencia}' WHERE id='{vehiculo.Id}'";
+            var consultaActualizacion = $@"UPDATE [dbo].[Vehiculo] SET ID='vehiculo.ID', Nombre='{vehiculo.Nombre}', Tipo='{vehiculo.Tipo}', Popularidad='{vehiculo.Popularidad}', Precio='{vehiculo.Precio}', NecesitaLicencia='{vehiculo.NecesitaLicencia}' WHERE id='{vehiculo.Id}'";
             SqlCommand comandoParaActualizacion = new SqlCommand(consultaActualizacion, conexion);
             conexion.Open();
             int resultado = comandoParaActualizacion.ExecuteNonQuery();
@@ -63,6 +63,7 @@ namespace Examen2.Handlers
                     //ID = Convert.ToInt32(columna["Id"]),
                     //Nombre = Convert.ToString(columna["Nombre"]),
                     //Año = Convert.ToInt32(columna["Año"]),
+                    ID = Convert.ToInt32(columna["ID"]),
                     Nombre = Convert.ToString(columna["Nombre"]),
                     Tipo = Convert.ToString(columna["Tipo"]),
                     Popularidad = Convert.ToString(columna["Popularidad"]),
