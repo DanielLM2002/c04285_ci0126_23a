@@ -16,6 +16,7 @@ namespace Examen2.Handlers
             rutaConexion = builder.Configuration.GetConnectionString("ContextoVehiculos");
             conexion = new SqlConnection(rutaConexion);
         }
+
         private DataTable CrearTablaConsulta(string consulta)
         {
             SqlCommand comandoParaConsulta = new SqlCommand(consulta, conexion);
@@ -36,6 +37,7 @@ namespace Examen2.Handlers
             conexion.Close();
             return resultado > 0;
         }
+
         public bool CrearVehiculo(VehiculosModel vehiculo)
         {
             var consultaCreaccion = $@"INSERT INTO [dbo].[Vehiculo] (ID, Nombre, Tipo, Popularidad, Precio, NecesitaLicencia) 
@@ -57,8 +59,6 @@ namespace Examen2.Handlers
             return resultado > 0;
         }
 
-
-
         public List<VehiculosModel> ObtenerVehiculos()
         {
             List<VehiculosModel> vehiculos = new List<VehiculosModel>();
@@ -69,14 +69,10 @@ namespace Examen2.Handlers
                 vehiculos.Add(
                 new VehiculosModel
                 {
-                    //ID = Convert.ToInt32(columna["Id"]),
-                    //Nombre = Convert.ToString(columna["Nombre"]),
-                    //Año = Convert.ToInt32(columna["Año"]),
                     ID = Convert.ToInt32(columna["ID"]),
                     Nombre = Convert.ToString(columna["Nombre"]),
                     Tipo = Convert.ToString(columna["Tipo"]),
                     Popularidad = Convert.ToString(columna["Popularidad"]),
-                    //Precio = Convert.ToString(columna["Precio"]),
                     Precio = (float)decimal.Parse(columna["Precio"].ToString()),
                     NecesitaLicencia = Convert.ToBoolean(columna["NecesitaLicencia"]),
 
