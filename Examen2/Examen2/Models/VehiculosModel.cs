@@ -19,9 +19,8 @@ namespace Examen2.Models
 
         [Required(ErrorMessage = "Ingrese el precio en dolares")]
         [DisplayName("Precio de la unidad")]
-        [RegularExpression("^(?=.*[2-9])\\d*(\\.\\d+)?$", ErrorMessage = "Ingrese un precio valido mayor que uno")]
+        [RegularExpression("^\\d*(\\.\\d+)?$", ErrorMessage = "Ingrese un precio valido")]
         public float Precio { get; set; }
-
 
         [Required(ErrorMessage = "Asegurese de especificar si se ocupa licensia")]
         [DisplayName("Requerimiento de licencia")]
