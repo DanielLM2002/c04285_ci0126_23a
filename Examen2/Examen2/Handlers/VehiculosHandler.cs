@@ -30,6 +30,15 @@ namespace Examen2.Handlers
             return consultaFormatoTabla;
         }
 
+        public bool EditarVehiculo(VehiculosModel vehiculo)
+        {
+            var consultaActualizacion = $@"UPDATE [dbo].[Vehiculo] SET Nombre='{vehiculo.Nombre}', Tipo='{vehiculo.Tipo}', Popularidad='{vehiculo.Popularidad}', Precio='{vehiculo.Precio}', NecesitaLicencia='{vehiculo.NecesitaLicencia}' WHERE id='{vehiculo.Id}'";
+            SqlCommand comandoParaActualizacion = new SqlCommand(consultaActualizacion, conexion);
+            conexion.Open();
+            int resultado = comandoParaActualizacion.ExecuteNonQuery();
+            conexion.Close();
+            return resultado > 0;
+        }
         public bool CrearVehiculo(VehiculosModel vehiculo)
         {
             var consultaCreaccion = $@"INSERT INTO [dbo].[Vehiculo] (Nombre, Tipo, Popularidad, Precio, NecesitaLicencia) VALUES ('{vehiculo.Nombre}', '{vehiculo.Tipo}', '{vehiculo.Popularidad}', '{vehiculo.Precio}', '{vehiculo.NecesitaLicencia}')";
