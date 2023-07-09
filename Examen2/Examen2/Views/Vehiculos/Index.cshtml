@@ -4,8 +4,9 @@
 }
 <h1>@ViewBag.MainTitle</h1>
 <div>
+    <a href="@Url.Action("CrearVehiculo", "Vehiculos")" class="btn btn-success">Anadir vehiculo</a>
     <table class="table">
-        <thread>
+        <thead>
             <tr>
                 <th>Nombre del vehiculo</th>
                 <th>Tipo de vehiculo</th>
@@ -13,35 +14,28 @@
                 <th>Precio de unidad (dolares)</th>
                 <th>Requerieminto de licencia</th>
             </tr>
-        </thread>
+        </thead> 
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Nombre</td>
+                    <td>@item.Nombre</td> 
                     <td>@item.Tipo</td>
                     <td>@item.Popularidad</td>
                     <td>@item.Precio</td>
                     <td>@item.NecesitaLicencia</td>
+                    <td>
+                        @Html.ActionLink("Editar", "EditarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-info",
+                    @onclick = "return confirm('Desea editar este vehiculo?')" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Eliminar", "EliminarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-danger",
+                    @onclick = "return confirm('Desea eliminar este vehiculo?')" })
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
-    <button onclick="showForm()">Mostrar formulario</button>
-    <div id="formDiv" style="display:none">
-        <form>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre">
-            <label for="tipo">Tipo:</label>
-            <input type="text" id="tipo" name="tipo">
-            <label for="popularidad">Popularidad:</label>
-            <input type="number" id="popularidad" name="popularidad">
-            <label for="precio">Precio:</label>
-            <input type="number" id="precio" name="precio">
-            <label for="licencia">Requerimiento de licencia:</label>
-            <input type="checkbox" id="licencia" name="licencia" value="true">
-        </form>
-    </div>
 </div>
 
 <script>
@@ -49,4 +43,5 @@
         document.getElementById("formDiv").style.display = "block";
     }
 </script>
+
 

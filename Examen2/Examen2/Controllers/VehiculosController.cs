@@ -83,6 +83,47 @@ namespace Examen2.Controllers
             }
 
         }
+
+        [HttpGet]
+        public ActionResult EliminarVehiculo(int? id)
+        {
+            ActionResult vista;
+            try
+            {
+                var vehiculosHandler = new VehiculosHandler();
+                var vehiculo = vehiculosHandler.ObtenerVehiculos().Find(model => model.ID == id);
+                if (vehiculo == null)
+                {
+                    vista = RedirectToAction("Index");
+                }
+                else
+                {
+                    vehiculosHandler.EliminarVehiculo(vehiculo);
+                    vista = RedirectToAction("Index", "Vehiculos");
+                }
+            }
+            catch
+            {
+                vista = RedirectToAction("Index");
+            }
+            return vista;
+        }
+
+        [HttpPost]
+        public ActionResult EliminarVehiculo(VehiculosModel vehiculo)
+        {
+            try
+            {
+                var vehiculosHandler = new VehiculosHandler();
+                vehiculosHandler.EliminarVehiculo(vehiculo);
+                return RedirectToAction("Index", "Vehiculos");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
     }
 
 }

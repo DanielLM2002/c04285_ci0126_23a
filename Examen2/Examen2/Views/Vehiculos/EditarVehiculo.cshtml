@@ -6,21 +6,12 @@
 <head>
 </head>
 <body>
-    @if (ViewBag.Message != null)
-    {
-        if (ViewBag.ExitoAlCrear)
-        {
-            <div class="alert-success"> <h3> @ViewBag.Message </h3> </div>
-        }
-        else
-        {
-            <div class="alert-danger"> <h3> @ViewBag.Message </h3> </div>
-        }
-    }
-    @using (Html.BeginForm("CrearVehiculo", "vehiculos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+  
+    @using (Html.BeginForm("EditarVehiculo", "vehiculos", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
-        <h1>Formulario de creacion de vehiculos</h1>
+        <h1>Formulario de edicion de vehiculos</h1>
+        @Html.HiddenFor(model=>model.ID)   
         <div class="form-horizontal">
             <div class="form-group">
                 @Html.LabelFor(model => model.Nombre)
@@ -55,7 +46,7 @@
                 @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
             </div>
 
-            <input type="submit" class="btn btn-success" value="Crear">
+            <input type="submit" class="btn btn-success" value="Guardar cambios">
         </div>
     }
 </body>

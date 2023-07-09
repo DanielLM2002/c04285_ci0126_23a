@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Examen2.Models;
+﻿using Examen2.Models;
 using System.Data;
 using System.Data.SqlClient;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
+
 
 
 namespace Examen2.Handlers
@@ -50,15 +47,16 @@ namespace Examen2.Handlers
             return resultado > 0;
         }
 
-        public bool EliminarVehiculo(int id)
+        public bool EliminarVehiculo(VehiculosModel vehiculo)
         {
-            var consultaEliminacion = $@"DELETE FROM [dbo].[Vehiculo] WHERE ID='{id}'";
-            SqlCommand comandoParaEliminacion = new SqlCommand(consultaEliminacion, conexion);
+            var consultaBorrado = $@"DELETE FROM [dbo].[Vehiculo] WHERE ID='{vehiculo.ID}'";
+            SqlCommand comandoParaBorrado = new SqlCommand(consultaBorrado, conexion);
             conexion.Open();
-            int resultado = comandoParaEliminacion.ExecuteNonQuery();
+            int resultado = comandoParaBorrado.ExecuteNonQuery();
             conexion.Close();
             return resultado > 0;
         }
+
 
 
         public List<VehiculosModel> ObtenerVehiculos()
