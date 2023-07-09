@@ -1,36 +1,37 @@
-﻿@model List<Examen2.Models.VehiculosModel>;
+﻿@model List<Examen2.Models.VehiculosModel>
 @{
     ViewData["Title"] = "Vehiculos";
 }
-<h1>@ViewBag.MainTitle</h1>
-<div>
-    <a href="@Url.Action("CrearVehiculo", "Vehiculos")" class="btn btn-success">Anadir vehiculo</a>
+<h1 style="text-align:center;">@ViewBag.MainTitle</h1>
+<div style="justify-content:center;">
+    <a href="@Url.Action("CrearVehiculo", "Vehiculos")" style="margin-right:10px;" class="btn btn-sm btn-success">Anadir vehiculo</a>
+
     <table class="table">
-        <thead>
+        <thead style="background-color:lightgray;">
             <tr>
-                <th>Nombre del vehiculo</th>
-                <th>Tipo de vehiculo</th>
-                <th>Popularidad</th>
-                <th>Precio de unidad (dolares)</th>
-                <th>Requerieminto de licencia</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
+                <th style="text-align:center;">Nombre del vehiculo</th>
+                <th style="text-align:center;">Tipo de vehiculo</th>
+                <th style="text-align:center;">Popularidad</th>
+                <th style="text-align:center;">Precio de unidad (dolares)</th>
+                <th style="text-align:center;">Requerieminto de licencia</th>
+                <th style="text-align:center;">Editar</th>
+                <th style="text-align:center;">Eliminar</th>
             </tr>
-        </thead> 
+        </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Nombre</td> 
-                    <td>@item.Tipo</td>
-                    <td>@item.Popularidad</td>
-                    <td>@item.Precio</td>
-                    <td>@item.NecesitaLicencia</td>
-                    <td>
+                    <td style="text-align:center;">@item.Nombre</td>
+                    <td style="text-align:center;">@item.Tipo</td>
+                    <td style="text-align:center;">@item.Popularidad</td>
+                    <td style="text-align:center;">@item.Precio</td>
+                    <td style="text-align:center;">@item.NecesitaLicencia</td>
+                    <td style="text-align:center;">
                         @Html.ActionLink("Editar", "EditarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-info",
                     @onclick = "return confirm('Desea editar este vehiculo?')" })
                     </td>
-                    <td>
+                    <td style="text-align:center;">
                         @Html.ActionLink("Eliminar", "EliminarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-danger",
                     @onclick = "return confirm('Desea eliminar este vehiculo?')" })
                     </td>
@@ -45,5 +46,6 @@
         document.getElementById("formDiv").style.display = "block";
     }
 </script>
+
 
 
