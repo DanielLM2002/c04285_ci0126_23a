@@ -3,44 +3,45 @@
     ViewBag.Title = "CrearVehiculo";
 }
 <html>
-<head> </head>
+<head>
+</head>
 <body>
     @if (ViewBag.Message != null)
     {
         if (ViewBag.ExitoAlCrear)
         {
             <div class="alert-success"> <h3> @ViewBag.Message </h3> </div>
-        }    
+        }
         else
         {
-            <div class="alert-danger"> <h3> @ViewBag.Message </h3> </div>    
+            <div class="alert-danger"> <h3> @ViewBag.Message </h3> </div>
         }
     }
     @using (Html.BeginForm("CrearVehiculo", "vehiculos", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
-       @Html.AntiForgeryToken()
-       <h1>Formulario de creacion de vehiculos</h1>
-       <div class = "form-horizontal">
-           <div class = "form-group">
-               @Html.LabelFor(model => model.Nombre)
-               @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
-               @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger"})
-           </div>
-           <div class="from-group">
+        @Html.AntiForgeryToken()
+        <h1>Formulario de creacion de vehiculos</h1>
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nombre)
+                @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger"})
+            </div>
+            <div class="from-group">
                 @Html.LabelFor(model => model.Tipo)
                 @Html.TextBoxFor(model => model.Tipo, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
 
-           </div>
-           <div class="from-group">
-                 @Html.LabelFor(model => model.Popularidad)
-                 @Html.TextBoxFor(model => model.Popularidad, new { @class = "form-control" })
-                 @Html.ValidationMessageFor(model => model.Popularidad, "", new { @class = "text-danger" })
-           </div>
+            </div>
             <div class="from-group">
-                  @Html.LabelFor(model => model.Precio)
-                  @Html.TextBoxFor(model => model.Precio, new { @class = "form-control" })
-                  @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+                @Html.LabelFor(model => model.Popularidad)
+                @Html.TextBoxFor(model => model.Popularidad, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Popularidad, "", new { @class = "text-danger" })
+            </div>
+            <div class="from-group">
+                @Html.LabelFor(model => model.Precio)
+                @Html.TextBoxFor(model => model.Precio, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.NecesitaLicencia)
@@ -52,10 +53,10 @@
                 @Html.LabelFor(model => model.ID)
                 @Html.TextBoxFor(model => model.ID, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
-            </div>  
+            </div>
 
-           <input type="submit" class="btn btn-success" value="Crear">
-       </div>
+            <input type="submit" class="btn btn-success" value="Crear">
+        </div>
     }
 </body>
 </html>

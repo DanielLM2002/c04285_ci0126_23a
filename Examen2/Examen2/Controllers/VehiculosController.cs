@@ -43,6 +43,46 @@ namespace Examen2.Controllers
                 return View();
             }
         }
+
+        [HttpGet]
+        public ActionResult EditarVehiculo(int? id) 
+        {
+            ActionResult vista;
+            try
+            {
+                var vehiculosHandler = new VehiculosHandler();
+                var vehiculo = vehiculosHandler.ObtenerVehiculos().Find(model => model.ID == id);
+                if (vehiculo == null)
+                {
+                    vista = RedirectToAction("Index");
+                }
+                else
+                {
+                    vista = View(vehiculo);
+                }
+            }
+            catch 
+            {
+                vista = RedirectToAction("Index");
+            }
+            return vista;
+        }
+
+        [HttpPost]
+        public ActionResult EditarVehiculo(VehiculosModel vehiculo) 
+        {
+            try 
+            {
+                var vehiculosHandler = new VehiculosHandler();
+                vehiculosHandler.EditarVehiculo(vehiculo);
+                return RedirectToAction("Index","Vehiculos");
+            }
+            catch
+            {
+                return View();
+            }
+
+        }
     }
 
 }
