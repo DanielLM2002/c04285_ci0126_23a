@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Examen2.Models;
 
-namespace Examen2.Tests
+namespace Examen2.UnitTestModel
 {
     [TestClass]
     public class VehiculosModelTests
