@@ -5,6 +5,13 @@ namespace Examen2.Controllers
 {
     public class VehiculosController : Controller
     {
+        //private IVehiculosHandler @object;
+
+        //public VehiculosController(IVehiculosHandler @object)
+        //{
+            //this.@object = @object;
+        //}
+
         public IActionResult Index()
         {
             VehiculosHandler vehiculosHandler = new VehiculosHandler(); 
