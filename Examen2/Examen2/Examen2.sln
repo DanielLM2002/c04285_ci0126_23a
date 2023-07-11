@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examen2", "Examen2.csproj", "{DD2CAB87-D7B2-46ED-807F-C6018EE1CEA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "..\TestProject1\TestProject1.csproj", "{9D72C8A4-CFD1-4E4A-B8FF-78D6D218BC6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\TestProject1\UnitTests.csproj", "{9D72C8A4-CFD1-4E4A-B8FF-78D6D218BC6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumCore", "..\SeleniumCore\SeleniumCore.csproj", "{F7266F94-A186-4243-9BC0-86AB02A914E6}"
 EndProject
