@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System.IO;
 using System.Reflection;
 
@@ -20,7 +22,13 @@ namespace SeleniumCore
             _driver = new ChromeDriver(outputDirectory);
             _driver.Navigate().GoToUrl("https://localhost:7227");
 
-            var goToData = _driver.FindElement(By.Id("goToVehiculos"));
+            var vehiculosButtonLocator = By.Id("goToVehiculos");
+            var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(vehiculosButtonLocator));
+
+            var vehiculosButton = _driver.FindElement(vehiculosButtonLocator);
+            vehiculosButton.Click();
+
 
         }
         [TestCleanup]
