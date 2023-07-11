@@ -20,7 +20,7 @@ namespace SeleniumCore
             _driver = new ChromeDriver(outputDirectory);
             _driver.Navigate().GoToUrl("https://localhost:7227");
 
-            //var goToData = _driver.FindElement(By.Name("Vehiculos"));
+            var goToData = _driver.FindElement(By.Id("goToVehiculos"));
 
         }
         [TestCleanup]
