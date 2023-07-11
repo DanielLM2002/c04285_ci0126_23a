@@ -20,4 +20,17 @@
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="4.10.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="UnitTest1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="UnitTest1.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FuncionalTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' ">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
