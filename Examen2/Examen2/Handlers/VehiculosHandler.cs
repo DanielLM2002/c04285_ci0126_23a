@@ -10,7 +10,6 @@ namespace Examen2.Handlers
     {
         private SqlConnection conexion;
         private string rutaConexion;
-        private IDbConnection @object;
 
         public VehiculosHandler()
         {
@@ -19,10 +18,7 @@ namespace Examen2.Handlers
             conexion = new SqlConnection(rutaConexion);
         }
 
-        public VehiculosHandler(IDbConnection @object)
-        {
-            this.@object = @object;
-        }
+        
 
         private DataTable CrearTablaConsulta(string consulta)
         {

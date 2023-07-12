@@ -5,13 +5,6 @@ namespace Examen2.Controllers
 {
     public class VehiculosController : Controller
     {
-        //private IVehiculosHandler @object;
-
-        //public VehiculosController(IVehiculosHandler @object)
-        //{
-            //this.@object = @object;
-        //}
-
         public IActionResult Index()
         {
             VehiculosHandler vehiculosHandler = new VehiculosHandler(); 
@@ -39,14 +32,14 @@ namespace Examen2.Controllers
 
                     if (ViewBag.ExitoAlCrear)
                     {
-                        ViewBag.Message = "El Vehiculo " + vehiculo.Nombre + " fue creado.";
+                        ViewBag.Message = "El vehículo " + vehiculo.Nombre + " fue creado.";
                     }
                 }
                 return View();
             }
             catch
             {
-                ViewBag.Message = "Algo salio mal en la creacion";
+                ViewBag.Message = "Algo salió mal en la creacion";
                 return View();
             }
         }

@@ -29,8 +29,11 @@ namespace SeleniumCore
             var vehiculosButton = _driver.FindElement(vehiculosButtonLocator);
             vehiculosButton.Click();
 
+            Assert.IsTrue(_driver.Url.Contains("https://localhost:7227/Vehiculos"));
+
 
         }
+
         [TestCleanup]
         public void CleanUp()
         {
