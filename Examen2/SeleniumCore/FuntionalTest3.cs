@@ -7,7 +7,10 @@ using System.IO;
 using System.Reflection;
 
 
-
+///<summary>
+/// Esta prueba modifica el item creado en la prueba anterior, este hace un procedimiento
+/// similar a la anterior de crear el objeto. Esta prueba le cambia el nombre a vehiculo y guarda los cambios.
+///</summary>
 namespace SeleniumCore
 {
     [TestClass]

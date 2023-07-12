@@ -26,7 +26,7 @@
                     <td style="text-align:center;">@item.Tipo</td>
                     <td style="text-align:center;">@item.Popularidad</td>
                     <td style="text-align:center;">@item.Precio</td>
-                    <td style="text-align:center;">@item.NecesitaLicencia</td>
+                    <td style="text-align:center;">@(item.NecesitaLicencia ? "Si" : "No") </td>
                     <td style="text-align:center;">
                         @Html.ActionLink("Editar", "EditarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-info", id = "EditButton" ,
                             @onclick = "return confirm('¿Desea borrar este ritmo musical?')" })

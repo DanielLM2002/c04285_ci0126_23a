@@ -9,7 +9,10 @@ using System.Reflection;
 
 
 ///<summary>
-///
+/// Esta prueba se realiza para poder crear un vehiculo en la base de datos denominado
+/// "ChiquiMovilPlus". Para esto se navega hasta la tabla donde se ven todos los objetos.
+/// Despues se busca el boton de crear el vehiculo y se le hace click para entrar al formulario
+/// donde la prueba lo llena automaticamente y genmera el objeto en la base de datos por su cuenta.
 ///</summary>
 
 namespace SeleniumCore
@@ -31,10 +34,10 @@ namespace SeleniumCore
             var vehiculosAniadirButtonLocator = By.Id("Aniadir");
             var Aniadir = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             Aniadir.Until(ExpectedConditions.ElementIsVisible(
-                         vehiculosAniadirButtonLocator));
+                    vehiculosAniadirButtonLocator));
 
             var vehiculosAniadirButton = _driver.FindElement(
-                                         vehiculosAniadirButtonLocator);
+                vehiculosAniadirButtonLocator);
             vehiculosAniadirButton.Click();
 
             var NombreFieldAniadir = _driver.FindElement(By.Id("NombreForm"));
