@@ -1,4 +1,6 @@
 Para poder correr el proyecto solo se debe de compilar con visualStudio
+Las pruebas unitarias se encuentran en el Archivo TestProject
+Las pruebas funcionales se encuentrane en el archivo SeleniumCore
 Por otro lado para poder hacer pruebas las unitarias funcionan con solo ir al test explorer y ejecutarlas mientras
 que la automatizadas requieren que:
 1. Se abran dos instancias de Visual Studio, una que estará ejecutando la aplicacion y otra que hará los test. Es importante mencionar que no pueden ser la misma instancia haciendo ambas. 
