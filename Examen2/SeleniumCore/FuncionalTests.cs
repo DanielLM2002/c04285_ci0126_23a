@@ -8,6 +8,14 @@ using System.Reflection;
 
 
 
+///<summary>
+///El objetivo de esta prueba es simplemente entrar a la página y redirigir al
+///usuario a la tabla de datos que hace fetch a la base de datos.
+///El resultado se da como positivo ya que llegamos al apartado de vehiculos y
+///podemos ver la tabla. Ademas hacemos el Assert con el URl del apartado de
+///la tabla.
+///</summary>
+
 namespace SeleniumCore
 {
     [TestClass]

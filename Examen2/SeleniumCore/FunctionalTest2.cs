@@ -8,13 +8,17 @@ using System.Reflection;
 
 
 
+///<summary>
+///
+///</summary>
+
 namespace SeleniumCore
 {
     [TestClass]
     public class createVehicle
     {
         IWebDriver _driver;
-        IWebDriver _driver2;
+
         [TestMethod]
         public void CreateVehicle()
         {
@@ -52,14 +56,6 @@ namespace SeleniumCore
             Assert.IsTrue(submitBtn.Enabled);
             submitBtn.Click();
 
-        }
-
-        [TestMethod]
-        public void EliminateVehicle()
-        {
-            var outputDirectory2 = Path.GetDirectoryName(
-                Assembly.GetExecutingAssembly().Location);
-            _driver2 = new ChromeDriver
         }
 
 

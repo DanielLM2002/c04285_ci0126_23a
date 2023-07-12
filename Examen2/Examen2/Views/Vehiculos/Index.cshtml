@@ -28,12 +28,12 @@
                     <td style="text-align:center;">@item.Precio</td>
                     <td style="text-align:center;">@item.NecesitaLicencia</td>
                     <td style="text-align:center;">
-                        @Html.ActionLink("Editar", "EditarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-info",
-                    @onclick = "return confirm('Desea editar este vehiculo?')" })
+                        @Html.ActionLink("Editar", "EditarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-info", id = "EditButton" ,
+                            @onclick = "return confirm('¿Desea borrar este ritmo musical?')" })
                     </td>
                     <td style="text-align:center;">
-                        @Html.ActionLink("Eliminar", "EliminarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-danger",
-                    @onclick = "return confirm('Desea eliminar este vehiculo?')" })
+                        @Html.ActionLink("Eliminar", "EliminarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-danger", id = "DeleteButton",
+                            @onclick = "return confirm('¿Desea borrar este ritmo musical?')" })
                     </td>
                 </tr>
             }
