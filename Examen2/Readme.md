@@ -7,3 +7,7 @@ que la automatizadas requieren que:
 2. Cambiar el localHost que se encuentra al inicio de cada uno de los test por el local host de la maquina que ejecuta la aplicacion.
 3. Tener los paquetes nuget de las dependencias descargados, estos ya vienen en la solucion por defecto.
 
+
+## Nota importanrte
+Este examen se hizo en visual studio mac, por lo que no se si puede generar problemas a la hora de correrlo en un máquina de windows o linux, no debería, pero no estoy 100% seguro
+
