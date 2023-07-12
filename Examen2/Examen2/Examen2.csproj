@@ -9,6 +9,9 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
+    <None Remove="chromedriver" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
     <PackageReference Include="Microsoft.Data.SqlClient.SNI.runtime" Version="5.1.0" />
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.8" />
@@ -24,6 +27,9 @@
     <PackageReference Include="Selenium.Support" Version="4.10.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="114.0.5735.9000" />
     <PackageReference Include="Selenium.WebDriver.IEDriver" Version="4.10.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="chromedriver" />
   </ItemGroup>
 
 </Project>

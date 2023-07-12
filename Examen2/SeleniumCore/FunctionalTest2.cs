@@ -44,12 +44,16 @@ namespace SeleniumCore
             LicenciaAniadir.Click();
             IdAniadir.SendKeys("777");
 
+            var submitBtnLocator = By.Id("ButtonAniadirCrear");
+            var submitBtn = _driver.FindElement(submitBtnLocator);
+            Assert.IsTrue(submitBtn.Enabled);
 
-            
 
-   
 
-            
+
+
+
+
 
 
         }
