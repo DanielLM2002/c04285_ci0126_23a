@@ -51,7 +51,7 @@ namespace Examen2.Tests
             // Arrange
             var controller = new VehiculosController();
             var vehiculosHandler = new VehiculosHandler();
-            var vehiculo = new VehiculosModel() { ID = 1, Nombre = "Test vehiculo" };
+            var vehiculo = new VehiculosModel() { ID = 2123, Nombre = "Test vehiculo" };
             var created = vehiculosHandler.CrearVehiculo(vehiculo);
 
             // Act

@@ -30,7 +30,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="FuncionalTests.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' ">
+    <None Include="ReadTest.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' ">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
