@@ -14,6 +14,7 @@ namespace SeleniumCore
     public class createVehicle
     {
         IWebDriver _driver;
+        IWebDriver _driver2;
         [TestMethod]
         public void CreateVehicle()
         {
@@ -25,9 +26,11 @@ namespace SeleniumCore
 
             var vehiculosAniadirButtonLocator = By.Id("Aniadir");
             var Aniadir = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-            Aniadir.Until(ExpectedConditions.ElementIsVisible(vehiculosAniadirButtonLocator));
+            Aniadir.Until(ExpectedConditions.ElementIsVisible(
+                         vehiculosAniadirButtonLocator));
 
-            var vehiculosAniadirButton = _driver.FindElement(vehiculosAniadirButtonLocator);
+            var vehiculosAniadirButton = _driver.FindElement(
+                                         vehiculosAniadirButtonLocator);
             vehiculosAniadirButton.Click();
 
             var NombreFieldAniadir = _driver.FindElement(By.Id("NombreForm"));
@@ -47,21 +50,23 @@ namespace SeleniumCore
             var submitBtnLocator = By.Id("ButtonAniadirCrear");
             var submitBtn = _driver.FindElement(submitBtnLocator);
             Assert.IsTrue(submitBtn.Enabled);
-
-
-
-
-
-
-
-
+            submitBtn.Click();
 
         }
 
-        //[TestCleanup]
-        //public void CleanUp()
-        //{
-        //    _driver.Quit();
-        //}
+        [TestMethod]
+        public void EliminateVehicle()
+        {
+            var outputDirectory2 = Path.GetDirectoryName(
+                Assembly.GetExecutingAssembly().Location);
+            _driver2 = new ChromeDriver
+        }
+
+
+        [TestCleanup]
+        public void CleanUp()
+        {
+            _driver.Quit();
+        }
     }
 }
