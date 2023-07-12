@@ -27,9 +27,6 @@ namespace SeleniumCore
             _driver.Navigate().GoToUrl("https://localhost:7227/Vehiculos");
 
             var vehiculosModificarButtonLocator = By.Id("EditButton-ChiquiMovilPlus");
-            var Aniadir = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
-            Aniadir.Until(ExpectedConditions.ElementIsVisible(
-                         vehiculosModificarButtonLocator));
 
             var vehiculosModificarButton = _driver.FindElement(
                 vehiculosModificarButtonLocator);

@@ -29,11 +29,11 @@
                     <td style="text-align:center;">@(item.NecesitaLicencia ? "Si" : "No") </td>
                     <td style="text-align:center;">
                         @Html.ActionLink("Editar", "EditarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-info", id = $"EditButton-{item.Nombre}" ,
-                            @onclick = "return confirm('¿Desea borrar este ritmo musical?')" })
+                            @onclick = "return confirm('¿Desea modificar este vehiculo?')" })
                     </td>
                     <td style="text-align:center;">
                         @Html.ActionLink("Eliminar", "EliminarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-danger", id = $"DeleteButton-{item.Nombre}",
-                            @onclick = "return confirm('¿Desea borrar este ritmo musical?')" })
+                            @onclick = "return confirm('¿Desea borrar este vehiculo?')" })
                     </td>
                 </tr>
             }

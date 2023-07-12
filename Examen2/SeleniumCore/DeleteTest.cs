@@ -26,10 +26,9 @@ namespace SeleniumCore
             _driver.Navigate().GoToUrl("https://localhost:7227");
             _driver.Navigate().GoToUrl("https://localhost:7227/Vehiculos");
 
-            var vehiculosBorrarrButtonLocator = By.Id("DeleteButton-ChiquiMovilPlus");
+            var vehiculosBorrarrButtonLocator = By.Id("DeleteButton-ChiquiMovilMinus");
 
-            var vehiculosBorrarButton = _driver.FindElement(
-                vehiculosBorrarrButtonLocator);
+            var vehiculosBorrarButton = _driver.FindElement(vehiculosBorrarrButtonLocator);
             vehiculosBorrarButton.Click();
             _driver.SwitchTo().Alert().Accept();
         }
