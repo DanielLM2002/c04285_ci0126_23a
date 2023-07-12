@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examen2", "Examen2.csproj", "{DD2CAB87-D7B2-46ED-807F-C6018EE1CEA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\TestProject1\UnitTests.csproj", "{9D72C8A4-CFD1-4E4A-B8FF-78D6D218BC6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumCore", "..\SeleniumCore\SeleniumCore.csproj", "{F7266F94-A186-4243-9BC0-86AB02A914E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD2CAB87-D7B2-46ED-807F-C6018EE1CEA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD2CAB87-D7B2-46ED-807F-C6018EE1CEA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD2CAB87-D7B2-46ED-807F-C6018EE1CEA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD2CAB87-D7B2-46ED-807F-C6018EE1CEA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D72C8A4-CFD1-4E4A-B8FF-78D6D218BC6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D72C8A4-CFD1-4E4A-B8FF-78D6D218BC6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D72C8A4-CFD1-4E4A-B8FF-78D6D218BC6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D72C8A4-CFD1-4E4A-B8FF-78D6D218BC6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7266F94-A186-4243-9BC0-86AB02A914E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7266F94-A186-4243-9BC0-86AB02A914E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7266F94-A186-4243-9BC0-86AB02A914E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7266F94-A186-4243-9BC0-86AB02A914E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8016FB0-076D-4701-B9B9-77E401640D83}
+	EndGlobalSection
+EndGlobal

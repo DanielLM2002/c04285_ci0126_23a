@@ -1,0 +1,51 @@
+﻿@model List<Examen2.Models.VehiculosModel>
+@{
+    ViewData["Title"] = "Vehiculos";
+}
+<h1 style="text-align:center;">@ViewBag.MainTitle</h1>
+<div style="justify-content:center;">
+    <a href="@Url.Action("CrearVehiculo", "Vehiculos")" id = "Aniadir",style="margin-right:10px;" class="btn btn-sm btn-success">Anadir vehiculo</a>
+
+    <table class="table">
+        <thead style="background-color:lightgray;">
+            <tr>
+                <th style="text-align:center;">Nombre del vehiculo</th>
+                <th style="text-align:center;">Tipo de vehiculo</th>
+                <th style="text-align:center;">Popularidad</th>
+                <th style="text-align:center;">Precio de unidad (dolares)</th>
+                <th style="text-align:center;">Requerieminto de licencia</th>
+                <th style="text-align:center;">Editar</th>
+                <th style="text-align:center;">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="text-align:center;">@item.Nombre</td>
+                    <td style="text-align:center;">@item.Tipo</td>
+                    <td style="text-align:center;">@item.Popularidad</td>
+                    <td style="text-align:center;">@item.Precio</td>
+                    <td style="text-align:center;">@(item.NecesitaLicencia ? "Si" : "No") </td>
+                    <td style="text-align:center;">
+                        @Html.ActionLink("Editar", "EditarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-info", id = "EditButton" ,
+                            @onclick = "return confirm('¿Desea borrar este ritmo musical?')" })
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.ActionLink("Eliminar", "EliminarVehiculo", new { id = item.ID }, new { @class = "btn btn alert-danger", id = "DeleteButton",
+                            @onclick = "return confirm('¿Desea borrar este ritmo musical?')" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function showForm() {
+        document.getElementById("formDiv").style.display = "block";
+    }
+</script>
+
+
+
